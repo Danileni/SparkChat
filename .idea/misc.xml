@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/drawable/background_image.xml" value="0.2735" />
         <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/drawable/background_input.xml" value="0.294" />
         <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/layout/activity_main.xml" value="0.4041666666666667" />
-        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/layout/activity_sign_in.xml" value="0.3930232558139535" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/layout/activity_sign_in.xml" value="0.3673913043478261" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/layout/activity_sign_up.xml" value="0.4041666666666667" />
       </map>
     </option>
   </component>

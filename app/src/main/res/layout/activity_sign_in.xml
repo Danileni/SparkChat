@@ -90,9 +90,6 @@
         android:textSize="@dimen/_13ssp"
         android:textStyle="bold"/>
 
-
-
-
   </LinearLayout>
 
 </ScrollView>

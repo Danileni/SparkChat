@@ -6,4 +6,8 @@
     <string name="password">Password</string>
     <string name="sign_in">Sign In</string>
     <string name="create_new_account">Create new account</string>
+    <string name="add_image">Add Image</string>
+    <string name="name">Name</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="sign_up">Sign up</string>
 </resources>
