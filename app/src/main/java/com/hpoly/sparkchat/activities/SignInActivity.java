@@ -43,6 +43,9 @@ public class SignInActivity extends AppCompatActivity {
         setListeners();
     }
 
+
+
+    //check for bugs
     // method for on click listeners
     private void setListeners() {
         // an instance of a binding class contains direct references to all views that have an ID in the corresponding layout
