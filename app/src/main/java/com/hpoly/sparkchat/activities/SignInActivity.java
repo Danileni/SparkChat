@@ -10,8 +10,11 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.biometric.BiometricPrompt;
+import androidx.core.content.ContextCompat;
 
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -20,6 +23,7 @@ import com.hpoly.sparkchat.utilities.Constants;
 import com.hpoly.sparkchat.utilities.PreferenceManager;
 
 import java.util.Locale;
+import java.util.concurrent.Executor;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -43,7 +47,35 @@ public class SignInActivity extends AppCompatActivity {
         setListeners();
     }
 
+    private BiometricPrompt getPrompt(){
+        Executor executor = ContextCompat.getMainExecutor(this);
+        BiometricPrompt.AuthenticationCallback callback = new BiometricPrompt.AuthenticationCallback() {
+            @Override
+            public void onAuthenticationError(int errorCode, @NonNull CharSequence errString) {
+                super.onAuthenticationError(errorCode, errString);
+                showToast(errString.toString());
+            }
 
+            @Override
+            public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
+                super.onAuthenticationSucceeded(result);
+                showToast("Authentication Succeeded");
+                if (preferenceManager.getBoolean(Constants.KEY_IS_SIGNED_IN)) {
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+
+            @Override
+            public void onAuthenticationFailed() {
+                super.onAuthenticationFailed();
+                showToast("Authentication Failed");
+            }
+        };
+        BiometricPrompt biometricPrompt = new BiometricPrompt(this, executor, callback);
+        return biometricPrompt;
+    }
 
     //check for bugs
     // method for on click listeners
@@ -53,6 +85,12 @@ public class SignInActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), SignUpActivity.class)));
         binding.buttonSignIn.setOnClickListener(v -> {
             if (isValidSignInDetails()) {
+                BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
+                        .setTitle("Please Verify")
+                        .setDescription("User Authentication is required to proceed")
+                        .setNegativeButtonText("Cancel")
+                        .build();
+                getPrompt().authenticate(promptInfo);
                 signIn();
             }
 
@@ -79,14 +117,9 @@ public class SignInActivity extends AppCompatActivity {
             });
                 //Show dialog box
                 AlertDialog dialog = mesbuilder.create();
-
                 dialog.show();
-
-
                 }
         );
-
-
     }
 
     private void setLocale(String choice){
@@ -98,7 +131,6 @@ public class SignInActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = getSharedPreferences("Settings",MODE_PRIVATE).edit();
         editor.putString("Language", choice);
         editor.apply();
-
     }
 
 
@@ -167,6 +199,4 @@ public class SignInActivity extends AppCompatActivity {
             return true;
         }
     }
-
 }
-

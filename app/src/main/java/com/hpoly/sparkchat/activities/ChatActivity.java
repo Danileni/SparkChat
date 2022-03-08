@@ -71,9 +71,12 @@ public class ChatActivity extends BaseActivity {
         init();
         listenMessages();
         loadLocale();
+<<<<<<< Updated upstream
         mapicon = findViewById(R.id.imageInfo);
 
 
+=======
+>>>>>>> Stashed changes
 
     }
     private void setLocale(String choice){
