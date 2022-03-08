@@ -10,4 +10,5 @@
     <color name="error">#B00020</color>
     <color name="received_message_background">#090D16</color>
     <color name="users_content_background">#D7E2FB</color>
+    <color name="green">#229E07</color>
 </resources>
