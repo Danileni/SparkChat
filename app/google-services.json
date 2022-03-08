@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "794304701196",
+    "project_id": "sparkchat-7e781",
+    "storage_bucket": "sparkchat-7e781.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794304701196:android:879acd6c5a211186cd1f29",
+        "android_client_info": {
+          "package_name": "com.hpoly.sparkchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794304701196-dlfdepnrkqmj1gutq1aqecu8i7ukhn90.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCX1MBJAkPj6QYKGgyGBUluVLBlI_VSt4E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794304701196-dlfdepnrkqmj1gutq1aqecu8i7ukhn90.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

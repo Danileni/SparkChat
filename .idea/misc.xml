@@ -3,11 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/drawable/background_chat_input.xml" value="0.288" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/drawable/background_content_bottom.xml" value="0.1125" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/drawable/background_content_top.xml" value="0.288" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/drawable/background_icon.xml" value="0.1275" />
         <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/drawable/background_image.xml" value="0.2735" />
         <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/drawable/background_input.xml" value="0.294" />
-        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/layout/activity_main.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/drawable/background_received_message.xml" value="0.288" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/drawable/background_sent_message.xml" value="0.132" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/drawable/ic_add.xml" value="0.288" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/drawable/ic_back.xml" value="0.288" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/drawable/ic_info.xml" value="0.288" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/drawable/ic_logout.xml" value="0.288" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/drawable/ic_send.xml" value="0.288" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/layout/activity_chat.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/layout/activity_main.xml" value="0.313915857605178" />
         <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/layout/activity_sign_in.xml" value="0.3673913043478261" />
-        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/layout/activity_sign_up.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/layout/activity_sign_up.xml" value="0.33483483483483484" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/layout/activity_users.xml" value="0.31699346405228757" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/layout/item_container_received_message.xml" value="0.4" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/layout/item_container_recent_conversion.xml" value="0.264" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/layout/item_container_sent_message.xml" value="0.4041666666666667" />
+        <entry key="..\:/Users/HPoly.DESKTOP-NR409IG/Github/SparkChat/app/src/main/res/layout/item_container_user.xml" value="0.4041666666666667" />
       </map>
     </option>
   </component>
