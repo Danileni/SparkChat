@@ -1,6 +1,9 @@
 package com.hpoly.sparkchat.activities;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 
@@ -15,6 +18,7 @@ import com.hpoly.sparkchat.utilities.PreferenceManager;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class UsersActivity extends BaseActivity implements UserListener {
 
@@ -29,12 +33,33 @@ public class UsersActivity extends BaseActivity implements UserListener {
         preferenceManager = new PreferenceManager(getApplicationContext());
         setListeners();
         getUsers();
+        loadLocale();
+
     }
 
     private void setListeners() {
         binding.imageBack.setOnClickListener(v -> onBackPressed());
     }
 
+    private void setLocale(String choice){
+        Locale locale = new Locale(choice);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.setLocale(locale);
+        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
+        SharedPreferences.Editor editor = getSharedPreferences("Settings",MODE_PRIVATE).edit();
+        editor.putString("Language", choice);
+        editor.apply();
+
+    }
+
+
+    private void loadLocale(){
+        SharedPreferences preferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+
+        String language = preferences.getString("Language", "");
+        setLocale(language);
+    }
     private void getUsers() {
         loading(true);
         FirebaseFirestore database = FirebaseFirestore.getInstance();

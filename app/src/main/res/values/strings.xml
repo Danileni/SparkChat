@@ -13,4 +13,5 @@
     <string name="select_user">Select user</string>
     <string name="type_a_message">Type a message</string>
     <string name="online">Online</string>
+    <string name="change">Change Language</string>
 </resources>

@@ -20,8 +20,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_20sdp"
-            android:text="@string/create_new_account"
             android:fontFamily="@font/alice"
+            android:text="@string/create_new_account"
             android:textColor="@color/primary_text"
             android:textSize="@dimen/_18ssp"
             android:textStyle="bold" />
@@ -34,8 +34,8 @@
 
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/imageProfile"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
+                android:layout_width="121dp"
+                android:layout_height="112dp"
                 android:background="@drawable/background_image"
                 android:scaleType="centerCrop"
                 app:riv_oval="true" />
@@ -45,10 +45,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/add_image"
                 android:fontFamily="@font/alice"
+                android:text="@string/add_image"
                 android:textColor="@color/secondary_text"
-                android:textSize="@dimen/_11ssp"/>
+                android:textSize="@dimen/_11ssp" />
 
         </FrameLayout>
 

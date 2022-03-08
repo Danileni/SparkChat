@@ -102,7 +102,17 @@
         android:text="@string/create_new_account"
         android:textColor="@color/primary"
         android:textSize="@dimen/_13ssp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/ChangeLan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:text="@string/change"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/_13ssp"
+        android:textStyle="bold" />
 
   </LinearLayout>
 

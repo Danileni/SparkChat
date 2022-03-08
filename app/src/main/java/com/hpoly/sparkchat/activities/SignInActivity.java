@@ -1,11 +1,16 @@
 package com.hpoly.sparkchat.activities;
 
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -13,6 +18,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.hpoly.sparkchat.databinding.ActivitySignInBinding;
 import com.hpoly.sparkchat.utilities.Constants;
 import com.hpoly.sparkchat.utilities.PreferenceManager;
+
+import java.util.Locale;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -30,6 +37,7 @@ public class SignInActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+        loadLocale();
         binding = ActivitySignInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setListeners();
@@ -44,8 +52,60 @@ public class SignInActivity extends AppCompatActivity {
             if (isValidSignInDetails()) {
                 signIn();
             }
+
         });
+        //Language choice
+        binding.ChangeLan.setOnClickListener(v ->{
+            final String[] lang = {"Greek","English"};
+            //Building the language dialog box
+            AlertDialog.Builder mesbuilder = new AlertDialog.Builder(SignInActivity.this);
+            mesbuilder.setTitle("Choose Language");
+            mesbuilder.setSingleChoiceItems(lang, -1, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    if(which == 0){
+                        setLocale("el");
+                        recreate();
+                    }
+                    else if(which == 1){
+                        setLocale("en");
+                        recreate();
+                    }
+                    dialog.dismiss();
+                }
+            });
+                //Show dialog box
+                AlertDialog dialog = mesbuilder.create();
+
+                dialog.show();
+
+
+                }
+        );
+
+
     }
+
+    private void setLocale(String choice){
+        Locale locale = new Locale(choice);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.setLocale(locale);
+        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
+        SharedPreferences.Editor editor = getSharedPreferences("Settings",MODE_PRIVATE).edit();
+        editor.putString("Language", choice);
+        editor.apply();
+
+    }
+
+
+    private void loadLocale(){
+        SharedPreferences preferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+
+        String language = preferences.getString("Language", "");
+        setLocale(language);
+    }
+
 
     // method for login users with constants for every field and store in firestore database
     private void signIn() {
