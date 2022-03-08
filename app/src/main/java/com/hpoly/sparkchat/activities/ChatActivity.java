@@ -59,7 +59,6 @@ public class ChatActivity extends BaseActivity {
     private FirebaseFirestore database;
     private String conversionId = null;
     private Boolean isReceiverAvailable = false;
-    private ImageView mapicon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,12 +70,6 @@ public class ChatActivity extends BaseActivity {
         init();
         listenMessages();
         loadLocale();
-<<<<<<< Updated upstream
-        mapicon = findViewById(R.id.imageInfo);
-
-
-=======
->>>>>>> Stashed changes
 
     }
     private void setLocale(String choice){

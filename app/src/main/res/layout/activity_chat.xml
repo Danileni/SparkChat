@@ -46,7 +46,7 @@
         android:layout_marginEnd="@dimen/_16sdp"
         android:layout_marginRight="@dimen/_16sdp"
         android:padding="@dimen/_6sdp"
-        android:src="@drawable/ic_info"
+        android:src="@drawable/ic_map"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/white"/>
