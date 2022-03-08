@@ -1,6 +1,7 @@
 package com.hpoly.sparkchat.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -8,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,6 +22,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import com.hpoly.sparkchat.R;
 import com.hpoly.sparkchat.adapters.ChatAdapter;
 import com.hpoly.sparkchat.databinding.ActivityChatBinding;
 import com.hpoly.sparkchat.models.ChatMessage;
@@ -56,6 +59,7 @@ public class ChatActivity extends BaseActivity {
     private FirebaseFirestore database;
     private String conversionId = null;
     private Boolean isReceiverAvailable = false;
+    private ImageView mapicon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +71,7 @@ public class ChatActivity extends BaseActivity {
         init();
         listenMessages();
         loadLocale();
-
+        mapicon = findViewById(R.id.imageInfo);
 
 
 
@@ -276,7 +280,11 @@ public class ChatActivity extends BaseActivity {
     private void setListeners() {
         binding.imageBack.setOnClickListener(v -> onBackPressed());
         binding.layoutSend.setOnClickListener(v -> sendMessage());
+        binding.imageInfo.setOnClickListener(v-> Showmap());
+    }
 
+    private  void Showmap(){
+        startActivity(new Intent(this, MapsActivity.class));
     }
 
     private String getReadableDateTime(Date date) {
