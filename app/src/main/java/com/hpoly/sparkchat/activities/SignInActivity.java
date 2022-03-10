@@ -60,11 +60,7 @@ public class SignInActivity extends AppCompatActivity {
             public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
                 showToast("Authentication Succeeded");
-                if (preferenceManager.getBoolean(Constants.KEY_IS_SIGNED_IN)) {
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
+                signIn();
             }
 
             @Override
@@ -91,7 +87,6 @@ public class SignInActivity extends AppCompatActivity {
                         .setNegativeButtonText("Cancel")
                         .build();
                 getPrompt().authenticate(promptInfo);
-                signIn();
             }
 
         });
